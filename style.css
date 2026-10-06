@@ -1,0 +1,84 @@
+/* Site stylesheet (replaces template/ku2009/*.css)
+   Colors follow the KU palette: blue + crimson. */
+
+:root {
+  --blue: #0022b4;
+  --crimson: #e8000d;
+  --text: #222;
+  --line: #d9d9d9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f1f1f1;
+  color: var(--text);
+  font: 16px/1.55 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* ---------- page container ---------- */
+#page {
+  max-width: 980px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 1.5em 3em;
+  background: #fff;
+  border-top: 6px solid var(--crimson);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- navigation bar ---------- */
+nav.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25em 0.4em;
+  margin: 0 -1.5em 1.8em;
+  padding: 0.7em 1em;
+  background: var(--blue);
+}
+nav.topnav a {
+  padding: 0.35em 0.85em;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.95em;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav.topnav a:hover { background: rgba(255, 255, 255, 0.2); }
+nav.topnav a.current { background: #fff; color: var(--blue); }
+
+/* ---------- links, headings, rules ---------- */
+a { color: var(--blue); }
+a:hover { color: var(--crimson); }
+
+h2 { margin: 0.3em 0 0.4em; color: var(--blue); font-size: 1.7em; line-height: 1.2; }
+.titleblock { margin-bottom: 0.8em; }
+.titleblock td h2 { font-size: 1.35em; }   /* name and package blurb on the home page */
+
+/* section headings ("Education:", "Software:", ...) */
+#page > div > h3 {
+  margin: 1.6em 0 0.3em;
+  padding-bottom: 0.2em;
+  color: var(--blue);
+  font-size: 1.2em;
+  border-bottom: 2px solid var(--crimson);
+}
+/* contact block on the home page */
+td h3 { margin: 0; color: var(--text); font-size: 1em; font-weight: 600; line-height: 1.5; }
+
+hr { margin: 1.2em 0; border: 0; border-top: 1px solid var(--line); }
+
+ul, ol { padding-left: 1.4em; }
+li { margin-bottom: 0.15em; }
+
+img { max-width: 100%; }
+
+/* ---------- small screens ---------- */
+@media (max-width: 700px) {
+  #page { padding: 0 1em 2em; }
+  nav.topnav { margin: 0 -1em 1.4em; }
+  .titleblock td { display: block; width: auto; text-align: center; }
+  .titleblock table { width: 100%; }
+}
