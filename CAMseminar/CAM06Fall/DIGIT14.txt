@@ -1,0 +1,45 @@
+\start83\
+\comment=Program file dated 11/02/05, 20:20
+\name=DIGIT14
+\file=C:\DOCUME~1\ADMINA~1\MYDOCU~1\TI83\DIGIT14.TXT
+Disp "14 DIGITS-> Str0"
+abs(X)\->\N
+
+0\->\E
+If N\!=\0
+Then
+int(log(N))\->\E
+max(\(-)\99,min(99,E))\->\E
+N/10^E\->\N
+If N-9.9-.1\>=\0
+Then
+E+1\->\E:N/10\->\N
+End
+If N-.99-.01<0
+Then
+E-1\->\E:10*N\->\N
+End
+End
+
+iPart(N)\->\D
+fPart(N)*10\->\N
+sub("0123456789",1+D,1)\->\Str0
+If X<0:"\(-)\"+Str0\->\Str0
+Str0+"."\->\Str0
+For(J,2,14)
+iPart(N)\->\D
+fPart(N)*10\->\N
+Str0+sub("0123456789",D+1,1)\->\Str0
+End
+Str0+"\EE\"\->\Str0
+If E<0:Str0+"\(-)\"\->\Str0
+abs(E)\->\E
+iPart(E/10)\->\D
+Str0+sub("0123456789",1+D,1)\->\Str0
+E-10*D\->\D
+Str0+sub("0123456789",1+D,1)\->\Str0
+inString(Str0,"\EE\")\->\J
+Disp sub(Str0,1,J-1)
+Disp "            "+sub(Str0,J,length(Str0)-J+1)
+\stop83\
+
