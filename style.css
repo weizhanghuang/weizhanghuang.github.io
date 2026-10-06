@@ -56,6 +56,7 @@ a:hover { color: var(--crimson); }
 h2 { margin: 0.3em 0 0.4em; color: var(--blue); font-size: 1.7em; line-height: 1.2; }
 .titleblock { margin-bottom: 0.8em; }
 .titleblock td h2 { font-size: 1.35em; }   /* name and package blurb on the home page */
+.titleblock td h2.pkg { color: var(--text); }   /* package blurb: black text, link stays blue */
 
 /* section headings ("Education:", "Software:", ...) */
 #page > div > h3 {
@@ -74,6 +75,17 @@ ul, ol { padding-left: 1.4em; }
 li { margin-bottom: 0.15em; }
 
 img { max-width: 100%; }
+
+/* ---------- picture galleries (movingmesh.html) ---------- */
+.gallery, .gallery tbody, .gallery tr { display: block; text-align: center; }
+.gallery td {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 320px;
+  padding: 0.3em 0.6em;
+  font-size: 0.92em;
+}
+.gallery img { margin: 0.2em 0.4em; }   /* replaces the old hspace=160 padding */
 
 /* ---------- small screens ---------- */
 @media (max-width: 700px) {
