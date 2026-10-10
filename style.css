@@ -9,23 +9,20 @@
 }
 
 * { box-sizing: border-box; }
+body { overflow-x: hidden; }
 
 body {
   margin: 0;
-  background: #f1f1f1;
+  background: #fff;
   color: var(--text);
   font: 16px/1.55 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* ---------- page container ---------- */
+/* ---------- page container (centered content column) ---------- */
 #page {
   max-width: 980px;
-  min-height: 100vh;
   margin: 0 auto;
-  padding: 0 1.5em 3em;
-  background: #fff;
-  border-top: 6px solid var(--crimson);
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  padding: 0 1.5em 3.5em;
 }
 
 /* ---------- navigation bar ---------- */
@@ -34,9 +31,15 @@ nav.topnav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.25em 0.4em;
-  margin: 0 -1.5em 1.8em;
+  margin: 0 0 1.8em;
   padding: 0.7em 1em;
   background: var(--blue);
+  border-top: 6px solid var(--crimson);
+}
+/* if the nav is inside #page, stretch it to the full window width */
+#page > nav.topnav {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
 }
 nav.topnav a {
   padding: 0.35em 0.85em;
@@ -90,7 +93,6 @@ img { max-width: 100%; }
 /* ---------- small screens ---------- */
 @media (max-width: 700px) {
   #page { padding: 0 1em 2em; }
-  nav.topnav { margin: 0 -1em 1.4em; }
   .titleblock td { display: block; width: auto; text-align: center; }
   .titleblock table { width: 100%; }
 }
